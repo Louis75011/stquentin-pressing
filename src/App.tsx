@@ -48,19 +48,19 @@ export default function App() {
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
-        } ${isScrolled ? 'bg-brand-blue shadow-lg py-3' : 'bg-brand-blue py-5'}`}
+        } ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-white border-b border-brand-grey py-5'}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo area */}
             <div className="flex flex-col">
-              <span className="text-white font-bold text-xl tracking-tight">Linge-Box</span>
+              <span className="text-gray-900 font-bold text-xl tracking-tight">Linge-Box</span>
               <span className="text-brand-red text-xs font-semibold tracking-wider uppercase">by Premium Pressing</span>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-6">
-              <div className="flex gap-5 text-sm font-medium text-white/90">
+              <div className="flex gap-5 text-sm font-medium text-gray-800">
                 <a href="#comment-ca-marche" className="hover:text-brand-red transition-colors">Comment ça marche</a>
                 <a href="#services" className="hover:text-brand-red transition-colors">Services</a>
               </div>
@@ -73,7 +73,7 @@ export default function App() {
             <div className="md:hidden">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="text-gray-900 p-2 hover:bg-gray-100 rounded-md transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,18 +84,18 @@ export default function App() {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden bg-brand-blue border-t border-brand-red absolute top-full left-0 right-0 shadow-xl">
+          <div className="md:hidden bg-white border-t border-brand-grey absolute top-full left-0 right-0 shadow-xl">
             <div className="px-4 py-4 flex flex-col gap-4">
               <a 
                 href="#comment-ca-marche" 
-                className="text-white hover:text-brand-red transition-colors font-medium py-2"
+                className="text-gray-800 hover:text-brand-red transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Comment ça marche
               </a>
               <a 
                 href="#services" 
-                className="text-white hover:text-brand-red transition-colors font-medium py-2"
+                className="text-gray-800 hover:text-brand-red transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
@@ -113,67 +113,67 @@ export default function App() {
       </nav>
 
       {/* Spacer for fixed nav */}
-      <div className="h-20 bg-brand-blue"></div>
+      <div className="h-20 bg-white"></div>
 
       {/* 2. HERO */}
-      <section className="bg-brand-blue py-16 lg:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            
-            {/* Left Column (60%) */}
-            <div className="w-full lg:w-3/5 space-y-8 z-10 text-center lg:text-left">
-              <div className="inline-block bg-white/10 border border-white/20 text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full mb-4 w-fit">
-                Conciergerie pressing B2B · Agglo SQY
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
-                Votre pressing, livré dans votre entreprise. <br className="hidden lg:block"/><span className="text-brand-red">24h/24.</span>
-              </h1>
-              
-              <p className="text-brand-grey text-sm sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed mb-6">
-                Installez une Linge-Box dans vos locaux et offrez à vos collaborateurs un service pressing premium, sans déplacement.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-                <a 
-                  href="#contact" 
-                  className="bg-brand-red text-white px-6 py-3 rounded-md font-bold text-sm shadow-lg shadow-brand-red/20 hover:scale-105 transition-all text-center"
-                >
-                  Demander une installation
-                </a>
-                <a 
-                  href="#comment-ca-marche" 
-                  className="border border-brand-grey text-brand-grey px-6 py-3 rounded-md font-bold text-sm hover:bg-white/10 transition-colors text-center"
-                >
-                  Voir comment ça marche
-                </a>
-              </div>
+      <section className="bg-brand-blue lg:bg-transparent relative overflow-hidden">
+        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,var(--color-brand-blue)_60%,white_60%)] pointer-events-none"></div>
 
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-[10px] sm:text-xs text-brand-grey font-medium">
-                <span>✓ Zéro contrainte RH</span>
-                <span>✓ Installation offerte</span>
-                <span>✓ Facturation mensuelle</span>
-              </div>
-            </div>
-
-            {/* Right Column (40%) */}
-            <div className="w-full lg:w-2/5 flex flex-col items-center justify-center mt-8 lg:mt-0 z-10">
-              <div className="relative">
-                <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[3px] border-brand-red overflow-hidden relative z-10 bg-white">
-                  <img 
-                    src="https://i.ibb.co/27yZxds8/stephane-fialip.jpg" 
-                    alt="Stéphane Fialip" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-blue px-4 py-1.5 text-center whitespace-nowrap border border-white/20 rounded-md z-20 shadow-lg">
-                  <div className="text-white font-bold text-xs sm:text-sm">Stéphane Fialip</div>
-                  <div className="text-brand-red text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold">Fondateur - Premium Pressing</div>
-                </div>
-              </div>
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-stretch">
+          
+          {/* Left Column (60%) */}
+          <div className="w-full lg:w-3/5 space-y-8 text-center lg:text-left py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+            <div className="inline-block bg-white/10 border border-white/20 text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full mb-4 w-fit">
+              Conciergerie pressing B2B · Agglo SQY
             </div>
             
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+              Votre pressing, livré dans votre entreprise. <br className="hidden lg:block"/><span className="text-brand-red">24h/24.</span>
+            </h1>
+            
+            <p className="text-white/90 text-sm sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed mb-6 font-medium">
+              Installez une Linge-Box dans vos locaux et offrez à vos collaborateurs un service pressing premium, sans déplacement.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+              <a 
+                href="#contact" 
+                className="bg-brand-red text-white px-6 py-3 rounded-md font-bold text-sm shadow-lg shadow-brand-red/20 hover:scale-105 transition-all text-center"
+              >
+                Demander une installation
+              </a>
+              <a 
+                href="#comment-ca-marche" 
+                className="border border-white/50 text-white px-6 py-3 rounded-md font-bold text-sm hover:bg-white/10 transition-colors text-center"
+              >
+                Voir comment ça marche
+              </a>
+            </div>
+
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-[10px] sm:text-xs text-white/90 font-medium">
+              <span>✓ Zéro contrainte RH</span>
+              <span>✓ Installation offerte</span>
+              <span>✓ Facturation mensuelle</span>
+            </div>
           </div>
+
+          {/* Right Column (40%) */}
+          <div className="w-full lg:w-2/5 flex flex-col items-center justify-center bg-white lg:bg-transparent py-16 lg:py-24 px-4 sm:px-6 lg:px-8 shadow-inner lg:shadow-none">
+            <div className="relative">
+              <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[3px] border-brand-red overflow-hidden relative z-10 bg-white shadow-xl">
+                <img 
+                  src="https://i.ibb.co/27yZxds8/stephane-fialip.jpg" 
+                  alt="Stéphane Fialip" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-5 py-2 text-center whitespace-nowrap border border-gray-200 rounded-md z-20 shadow-lg">
+                <div className="text-gray-900 font-bold text-xs sm:text-sm">Stéphane Fialip</div>
+                <div className="text-brand-red text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold">Fondateur - Premium Pressing</div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </section>
 
